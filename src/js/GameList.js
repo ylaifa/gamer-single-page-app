@@ -1,7 +1,7 @@
 const GameList = (argument = "") => {
+    document.getElementById("select-box").hidden = true;
     const preparePage = () => {
         let cleanedArgument = argument.replace(/\s+/g, "-");
-        console.log(cleanedArgument)
         let articles = "";
 
         const fetchList = (url, argument) => {
@@ -28,6 +28,7 @@ const GameList = (argument = "") => {
         };
 
         fetchList("https://api.rawg.io/api/games", cleanedArgument);
+
     };
 
     const render = () => {
@@ -42,5 +43,16 @@ const GameList = (argument = "") => {
 
     render();
 };
+
+// Game Request By User
+
+const requestGame = (e) => {
+    const inputGame = document.getElementsByTagName("input")[0].value;
+    GameList(inputGame);
+    e.preventDefault();
+};
+
+document.getElementById("submit-search").addEventListener("click", requestGame);
+
 
 export default GameList;

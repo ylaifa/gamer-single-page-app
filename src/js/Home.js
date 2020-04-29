@@ -1,7 +1,7 @@
 import moment from "moment";
 
 const Home = (argument = "") => {
-
+    document.getElementById("select-box").hidden = false;
     let time = moment().format().slice(0, 10);
     let future_time = moment().add(1, 'years').format().slice(0, 10);
 
