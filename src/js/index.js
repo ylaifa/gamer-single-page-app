@@ -3,14 +3,14 @@ import "bootstrap";
 import moment from "moment";
 import routes from "./routes";
 
-let pageArgument;
+let gameArgument;
 
 const setRoute = () => {
     let path = window.location.hash.substring(1).split("/");
-    pageArgument = path[1] || "";
+    gameArgument = path[1] || "";
 
-    var pageContent = document.getElementById("pageContent");
-    routes[path[0]](pageArgument);
+    var gameContent = document.getElementById("gameContent");
+    routes[path[0]](gameArgument);
     return true;
 };
 
