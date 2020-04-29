@@ -18,7 +18,7 @@ const GameList = (argument = "") => {
                     <div class="cardGame">
                       <h1>${article.name}</h1>
                       <h2>${article.released}</h2>
-                      <img src='${article.backround_image}' alt=''width="130" height="150" />
+                      <img src='${article.background_image}' alt=''width="130" height="150" />
                       <a href = "#gamedetail/${article.id}">${article.id}</a>
                     </div>
                   `;
