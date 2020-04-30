@@ -1,5 +1,4 @@
 const GameDetail = (argument) => {
-    document.getElementById("select-box").hidden = true;
     const preparePage = () => {
         let cleanedArgument = argument.replace(/\s+/g, "-");
         let articleContent = "";
