@@ -11,15 +11,11 @@
 
 <body>
 
-    <a href="#">Home</a>
-    <a href="#gamelist">GameList</a>
-    <a href="#gamelist/borderlands">GameList borderlands</a>
-
     <div class="container">
         <header>
-            <nav class="navbar mt-5 mb-5">
+            <nav class="navbar mt-5 mb-10">
                 <div class="col-8">
-                    <h1><a href="#">Home</a></h1>
+                    <h1><a href="#">Game land</a></h1>
                 </div>
                 <div class="search-box p-1  rounded-pill col-4">
                     <form class="header-search-form">
@@ -31,29 +27,29 @@
                 </div>
             </nav>
         </header>
-        
+
 
         <div id="select-box">
-            <div class="custom-select" style="width:200px;">
-                <select>
-                    <option value="0">Select car:</option>
-                    <option value="1">Audi</option>
-                    <option value="2">BMW</option>
-                    <option value="3">Citroen</option>
-                    <option value="4">Ford</option>
-                    <option value="5">Honda</option>
-                    <option value="6">Jaguar</option>
-                    <option value="7">Land Rover</option>
-                    <option value="8">Mercedes</option>
-                    <option value="9">Mini</option>
-                    <option value="10">Nissan</option>
-                    <option value="11">Toyota</option>
-                    <option value="12">Volvo</option>
+            <div class="mb-5" style="width:200px;">
+                <select id="select-platform">
+                    <option value="">Platforms</option>
+                    <option value="18">Playstation 4</option>
+                    <option value="1">Xbox One</option>
+                    <option value="7">Nintendo Switch</option>
+                    <option value="4">PC</option>
+                    <option value="3">iOS</option>
+                    <option value="21">Android</option>
+                    <option value="5">Mac OS</option>
+                    <option value="6">Linux</option>
                 </select>
             </div>
         </div>
 
         <div id="gameContent">Choissez un lien</div>
+
+        <div id="see-more">
+            <button id="see-more-button" class="btn btn-danger btn-block">See more</button>
+        </div>
 
     </div>
     <script src="dist/bundle.js"></script>
