@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@now/static-build": "^0.16.0",
     "@popperjs/core": "^2.3.3",
     "bootstrap": "^4.4.1",
     "fibers": "^5.0.0",
