@@ -15,12 +15,31 @@ const GameList = (argument = "") => {
                 .then((response) => {
                     response.results.forEach((article) => {
                         articles += `
-                    <div class="cardGame">
-                      <h1>${article.name}</h1>
-                      <h2>${article.released}</h2>
-                      <img src='${article.background_image}' alt=''width="130" height="150" />
-                      <a href = "#gamedetail/${article.id}">${article.id}</a>
+                  
+                  <!-- Card Dark -->
+                    <div class="card col-md-4">
+
+                        <!-- Card image -->
+                        
+                        <img class="card-img-top" src='${article.background_image}'width="130" height="150" />      
+                  
+
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                            
+                            <!-- Title -->
+                            <h4 class="card-title">${article.name}</h4>
+    
+                            <!-- Link -->
+                            <a href="#gamedetail/${article.id}" class=" d-flex justify-content-center">
+                            <h5>Read more <i class="fas fa-angle-double-right"></i></h5>
+                            </a>
+
+                        </div>
+
                     </div>
+                    <!-- Card Dark -->
                   `;
                     });
                     document.querySelector(".page-list .articles").innerHTML = articles;
@@ -49,7 +68,6 @@ const GameList = (argument = "") => {
 const requestGame = (e) => {
     const inputGame = document.getElementsByTagName("input")[0].value;
     GameList(inputGame);
-    e.preventDefault();
 };
 
 document.getElementById("submit-search").addEventListener("click", requestGame);
