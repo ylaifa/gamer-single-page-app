@@ -1,3 +1,5 @@
+let pageSizeNumber = 9;
+
 const GameList = (argument = "") => {
 
     document.getElementById("select-box").hidden = true;
@@ -9,7 +11,7 @@ const GameList = (argument = "") => {
         const fetchList = (url, argument) => {
             let finalURL = url;
             if (argument) {
-                finalURL = url + "?search=" + argument + "&page_size=9";
+                finalURL = url + "?search=" + argument + "&page_size=$" + pageSizeNumber;
             }
 
             fetch(`${finalURL}`)
@@ -73,11 +75,28 @@ const GameList = (argument = "") => {
 // Game Request By User
 
 const requestGame = (e) => {
-    const inputGame = document.getElementsByTagName("input")[0].value;
+    let inputGame = document.getElementsByTagName("input")[0].value;
     window.location.href = `#gamelist/?search=${inputGame}`;
 };
 
 document.getElementById("submit-search").addEventListener("click", requestGame);
+
+// See More Page Size
+
+const pageSize = () => {
+    let inputGame = document.getElementsByTagName("input")[0].value;
+    console.log(inputGame)
+    if (pageSizeNumber < 18) {
+        pageSizeNumber += 9;
+        GameList(inputGame);
+    } else {
+        pageSizeNumber += 9;
+        document.getElementById('see-more-button').hidden = true;
+        GameList(inputGame);
+    }
+}
+
+document.getElementById('see-more-button').addEventListener('click', pageSize)
 
 
 export default GameList;
